@@ -1,8 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VD Cosmos - Vidriería
 
-## Getting Started
+Sitio web para VD Cosmos, vidriería con 50 años de experiencia en el mercado.
 
-First, run the development server:
+Este proyecto está construido con [Next.js 15](https://nextjs.org) y las tecnologías más modernas de desarrollo web.
+
+## Tecnologías Utilizadas
+
+- **Next.js 15** - Framework de React con App Router
+- **TypeScript** - Tipado estático para JavaScript
+- **Tailwind CSS** - Framework de CSS utilitario
+- **ESLint** - Linter para mantener código limpio
+- **Turbopack** - Bundler ultra-rápido para desarrollo
+
+## Desarrollo
+
+Para iniciar el servidor de desarrollo:
 
 ```bash
 npm run dev
