@@ -23,7 +23,7 @@ interface HeroProps {
 }
 
 const Hero = ({
-  title = "Visualiza tu proyecto",
+  title,
   subtitle = "Diseñamos tus ideas con el mejor acabado",
   description = "Transforma tu hogar con acabados de primera calidad. Con 50 años perfeccionando cada detalle, creamos espacios que reflejan tu estilo de vida y elevan tu bienestar diario.",
   primaryCTA = {
@@ -80,7 +80,7 @@ const Hero = ({
             {/* Título principal */}
             <div className="space-y-3">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-cosmos-blue leading-tight">
-                {title}
+                {title ? title : <>Visualiza tu <span className="text-cosmos-red">proyecto</span></>}
               </h1>
               
               <p className="text-lg sm:text-xl text-gray-700 font-heading font-medium">
@@ -137,7 +137,7 @@ const Hero = ({
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="flex flex-col items-center space-y-2">
             <span className="text-sm text-gray-500 font-body">Descubre más</span>
             <ChevronDown className="w-6 h-6 text-cosmos-blue" />

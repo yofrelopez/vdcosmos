@@ -22,7 +22,7 @@ interface HeroProps {
 }
 
 const Hero = ({
-  title = "Visualiza tu proyecto",
+  title,
   subtitle = "Diseñamos tus ideas con el mejor acabado",
   description = "Transforma tu hogar con acabados de primera calidad. Con 50 años perfeccionando cada detalle, creamos espacios que reflejan tu estilo de vida y elevan tu bienestar diario.",
   primaryCTA = {
@@ -88,8 +88,13 @@ const Hero = ({
           
           {/* Título principal */}
           <div className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight drop-shadow-lg">
-              {title}
+            <h1 className="text-5xl sm:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight">
+              Visualiza tu <span className="text-cosmos-blue" style={{ 
+                backgroundColor: 'rgba(255,255,255,0.9)', 
+                padding: '0 0.3em', 
+                borderRadius: '4px',
+                backdropFilter: 'blur(4px)'
+              }}>proyecto</span>
             </h1>
             
             <p className="text-xl sm:text-2xl text-white/90 font-heading font-medium drop-shadow-md">
@@ -102,7 +107,7 @@ const Hero = ({
             {/* CTA Primario */}
             <Link
               href={primaryCTA.href}
-              className="group inline-flex items-center justify-center px-8 py-4 bg-cosmos-blue/80 backdrop-blur-sm text-white font-heading font-semibold rounded-lg hover:bg-cosmos-blue transition-all duration-200 shadow-xl hover:shadow-2xl"
+              className="group inline-flex items-center justify-center px-8 py-4 bg-cosmos-red/80 backdrop-blur-sm text-white font-heading font-semibold rounded-lg hover:bg-cosmos-red transition-all duration-200 shadow-xl hover:shadow-2xl"
             >
               {primaryCTA.text}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -131,7 +136,7 @@ const Hero = ({
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="flex flex-col items-center space-y-2">
             <span className="text-sm text-white/70 font-body">Descubre más</span>
             <ChevronDown className="w-6 h-6 text-white/70" />
