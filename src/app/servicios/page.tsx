@@ -1,4 +1,30 @@
+import { Metadata } from 'next'
 import ServicesGrid from '@/components/services/ServicesGrid'
+
+export const metadata: Metadata = {
+  title: 'Servicios Especializados - VD COSMOS | 12 Categorías Profesionales',
+  description: 'Descubre nuestros 12 servicios especializados: ventanas de aluminio, mamparas de baño, puertas, vitrinas, espejos y más. 50+ años de experiencia garantizada.',
+  keywords: ['servicios vidriería', 'ventanas aluminio', 'mamparas baño', 'puertas aluminio', 'vitrinas comerciales', 'espejos decorativos', 'barandas', 'cortinas cristal'],
+  
+  openGraph: {
+    title: 'Servicios Especializados - VD COSMOS | 12 Categorías Profesionales',
+    description: 'Descubre nuestros 12 servicios especializados: ventanas de aluminio, mamparas de baño, puertas, vitrinas, espejos y más. 50+ años de experiencia.',
+    images: [
+      {
+        url: "https://vdcosmos.vercel.app/images/servicios_hero.png",
+        width: 1200,
+        height: 630,
+        alt: 'Técnico VD COSMOS instalando ventanas - Servicios profesionales de vidriería',
+      }
+    ],
+  },
+  
+  twitter: {
+    title: 'Servicios Especializados - VD COSMOS',
+    description: '12 categorías de servicios profesionales en vidriería, aluminio y decoraciones. 50+ años de experiencia.',
+    images: ["https://vdcosmos.vercel.app/images/servicios_hero.png"],
+  }
+}
 
 export default function ServicesPage() {
   return (
