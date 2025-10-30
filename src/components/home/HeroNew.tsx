@@ -89,12 +89,7 @@ const Hero = ({
           {/* Título principal */}
           <div className="space-y-4">
             <h1 className="text-5xl sm:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight">
-              Visualiza tu <span className="text-cosmos-blue" style={{ 
-                backgroundColor: 'rgba(255,255,255,0.9)', 
-                padding: '0 0.3em', 
-                borderRadius: '4px',
-                backdropFilter: 'blur(4px)'
-              }}>proyecto</span>
+              Visualiza tu proyecto
             </h1>
             
             <p className="text-xl sm:text-2xl text-white/90 font-heading font-medium drop-shadow-md">
