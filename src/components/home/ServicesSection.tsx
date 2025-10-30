@@ -18,42 +18,42 @@ const ServicesSection = () => {
       id: 'vidrio-templado',
       title: 'Vidrio Templado & Mamparas',
       description: 'Mamparas de baño, divisiones y paneles de vidrio templado con la máxima seguridad y elegancia para tu hogar.',
-      image: '/images/productos/mampara.jpg',
+      image: '/images/productos/mamparas/mampara.jpg',
       href: '/servicios/vidrio-templado'
     },
     {
       id: 'ventanas-aluminio',
       title: 'Ventanas de Aluminio',
       description: 'Ventanas y sistemas de apertura en aluminio de alta calidad, diseñadas para eficiencia térmica y durabilidad.',
-      image: '/images/productos/ventana.jpg',
+      image: '/images/productos/ventanas/ventana.jpg',
       href: '/servicios/ventanas-aluminio'
     },
     {
       id: 'muebles-melamina',
       title: 'Muebles de Melamina',
       description: 'Muebles modulares y personalizados en melamina. Cocinas, closets y soluciones de almacenamiento a medida.',
-      image: '/images/productos/melamina.jpg',
+      image: '/images/productos/melamina/melamina.jpg',
       href: '/servicios/muebles-melamina'
     },
     {
       id: 'barandas-escaleras',
       title: 'Barandas & Escaleras',
       description: 'Barandas de acero, vidrio y mixtas para escaleras y balcones. Diseños modernos con máxima seguridad.',
-      image: '/images/productos/baranda-escalera.jpg',
+      image: '/images/productos/baranda/baranda-escalera.jpg',
       href: '/servicios/barandas-escaleras'
     },
     {
       id: 'espejos-decoraciones',
       title: 'Espejos & Decoraciones',
       description: 'Espejos decorativos, cuadros y elementos de diseño que transforman y amplían tus espacios.',
-      image: '/images/productos/espejo.jpg',
+      image: '/images/productos/espejos/espejo.jpg',
       href: '/servicios/espejos-decoraciones'
     },
     {
       id: 'cortinas-persianas',
       title: 'Cortinas & Persianas',
       description: 'Cortinas roller, persianas y sistemas de control solar para privacidad y confort en tu hogar u oficina.',
-      image: '/images/productos/cortina.jpg',
+      image: '/images/productos/cortinas/cortina.jpg',
       href: '/servicios/cortinas-persianas'
     }
   ]
@@ -120,9 +120,20 @@ const ServicesSection = () => {
           ))}
         </div>
 
+        {/* Botón para ver todos los servicios */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/servicios"
+            className="inline-flex items-center justify-center px-8 py-4 bg-cosmos-red text-white font-heading font-semibold rounded-lg hover:bg-cosmos-red-dark transition-all duration-200 shadow-lg hover:shadow-xl"
+          >
+            Ver todos los servicios
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </Link>
+        </div>
+
         {/* CTA de contacto */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-cosmos-blue/5 to-cosmos-red/5 rounded-2xl p-8 lg:p-12">
+          <div className="bg-linear-to-r from-cosmos-blue/5 to-cosmos-red/5 rounded-2xl p-8 lg:p-12">
             <h3 className="text-2xl lg:text-3xl font-heading font-bold text-gray-900 mb-4">
               ¿Necesitas un servicio personalizado?
             </h3>

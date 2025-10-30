@@ -27,22 +27,22 @@ const Footer = () => {
         
         {/* Sección principal */}
         <div className="py-12 lg:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             
             {/* Columna 1: Empresa */}
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 text-center lg:text-left">
               <div className="mb-6">
                 <Image
                   src="/images/logos/logo_cosmos.png"
                   alt="V & D COSMOS S.R.L."
                   width={320}
                   height={90}
-                  className="h-18 w-auto"
+                  className="h-18 w-auto mx-auto lg:mx-0"
                   priority
                 />
               </div>
               
-              <div className="space-y-4 mb-6">
+              <div className="space-y-6 mb-6">
                 <p className="text-cosmos-blue font-medium font-heading text-sm">
                   Calidad para tu vida
                 </p>
@@ -89,73 +89,79 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Columna 2: Enlaces */}
-            <div>
-              <h3 className="font-heading font-semibold text-gray-900 mb-4">
-                Enlaces
-              </h3>
-              <ul className="space-y-2">
-                {quickLinks.map((link) => (
-                  <li key={link.name}>
-                    <Link 
-                      href={link.href}
-                      className="text-gray-600 hover:text-cosmos-blue transition-colors duration-200 font-body"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Columna 3: Contacto */}
-            <div>
-              <h3 className="font-heading font-semibold text-gray-900 mb-4">
-                Contacto
-              </h3>
+            {/* Contenedor para Enlaces y Contacto en mobile - 2 columnas */}
+            <div className="lg:col-span-2 flex justify-around lg:contents">
               
-              <div className="space-y-3">
-                {/* Dirección */}
-                <div className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 text-cosmos-blue mt-0.5 shrink-0" />
-                  <div>
-                    <p className="text-gray-600 font-body text-sm">
-                      Jirón Arequipa 230<br />
-                      Barranca
-                    </p>
-                  </div>
-                </div>
-
-                {/* WhatsApp */}
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <MessageCircle className="w-5 h-5 text-green-600" />
-                    <span className="text-sm font-medium text-gray-700">WhatsApp:</span>
-                  </div>
-                  {whatsappNumbers.map((wa) => (
-                    <div key={wa.number} className="ml-7">
-                      <a 
-                        href={`https://wa.me/${wa.number}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-green-600 transition-colors duration-200 font-body text-sm"
+              {/* Columna 2: Enlaces */}
+              <div className="text-left">
+                <h3 className="font-heading font-semibold text-gray-900 mb-4">
+                  Enlaces
+                </h3>
+                <ul className="space-y-2">
+                  {quickLinks.map((link) => (
+                    <li key={link.name}>
+                      <Link 
+                        href={link.href}
+                        className="text-gray-600 hover:text-cosmos-blue transition-colors duration-200 font-body"
                       >
-                        {wa.display}
-                      </a>
-                    </div>
+                        {link.name}
+                      </Link>
+                    </li>
                   ))}
+                </ul>
+              </div>
+
+              {/* Columna 3: Contacto */}
+              <div className="text-left">
+                <h3 className="font-heading font-semibold text-gray-900 mb-4">
+                  Contacto
+                </h3>
+                
+                <div className="space-y-3">
+                  {/* Dirección */}
+                  <div className="flex items-start space-x-3">
+                    <MapPin className="w-5 h-5 text-cosmos-blue mt-0.5 shrink-0" />
+                    <div>
+                      <p className="text-gray-600 font-body text-sm">
+                        Jirón Arequipa 230<br />
+                        Barranca
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* WhatsApp */}
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <MessageCircle className="w-5 h-5 text-green-600" />
+                      <span className="text-sm font-medium text-gray-700">WhatsApp:</span>
+                    </div>
+                    <div className="flex flex-col items-start">
+                      {whatsappNumbers.map((wa) => (
+                        <div key={wa.number} className="ml-7">
+                          <a 
+                            href={`https://wa.me/${wa.number}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-600 hover:text-green-600 transition-colors duration-200 font-body text-sm"
+                          >
+                            {wa.display}
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Columna 4: Horarios y Redes */}
-            <div>
+            <div className="text-center lg:text-left">
               <h3 className="font-heading font-semibold text-gray-900 mb-4">
                 Horarios
               </h3>
               
               {/* Horarios */}
-              <div className="flex items-start space-x-3 mb-6">
+              <div className="flex items-start space-x-3 mb-6 justify-center lg:justify-start">
                 <Clock className="w-5 h-5 text-cosmos-planet mt-0.5 shrink-0" />
                 <div>
                   <p className="text-gray-600 font-body text-sm">
@@ -169,7 +175,7 @@ const Footer = () => {
                 Síguenos
               </h4>
               
-              <div className="flex space-x-3">
+              <div className="flex space-x-3 justify-center lg:justify-start">
                 {/* Facebook */}
                 <a 
                   href="#" 

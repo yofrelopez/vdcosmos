@@ -43,3 +43,14 @@ body {
   color: var(--foreground);
   font-family: var(--font-opensans), system-ui, sans-serif;
 }
+
+/* Hero mobile positioning */
+.mobile-hero-bg {
+  background-position: calc(50% + 100px) center;
+}
+
+@media (min-width: 640px) {
+  .mobile-hero-bg {
+    background-position: center;
+  }
+}
