@@ -3,6 +3,7 @@ import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import ToastProvider from '@/components/providers/ToastProvider';
 
 // Montserrat - similar al logo COSMOS (bold, moderno, geométrico)
 const montserrat = Montserrat({
@@ -83,17 +84,17 @@ export const metadata: Metadata = {
     google: "verificar-con-google-search-console",
   },
 
-  // Configuración de viewport y otros
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
-
   // Información de la aplicación
   applicationName: "VD COSMOS",
   generator: "Next.js",
   referrer: "origin-when-cross-origin",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: "#1a237e",
 };
 
 export default function RootLayout({
@@ -148,14 +149,13 @@ export default function RootLayout({
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
         
-        {/* Theme color para navegadores móviles */}
-        <meta name="theme-color" content="#1a237e" />
         <meta name="msapplication-TileColor" content="#1a237e" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
       </head>
       <body
         className={`${montserrat.variable} ${openSans.variable} font-sans antialiased`}
       >
+        <ToastProvider />
         <Navbar />
         <main className="pt-16 lg:pt-20">
           {children}

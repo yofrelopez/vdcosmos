@@ -9,10 +9,20 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "cloudinary": "^2.9.0",
+    "dotenv": "^17.3.1",
+    "jose": "^6.2.1",
     "lucide-react": "^0.548.0",
-    "next": "16.0.1",
+    "next": "16.0.10",
+    "next-cloudinary": "^6.17.5",
+    "postgres": "^3.4.8",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "react-hook-form": "^7.71.2",
+    "sonner": "^2.0.7",
+    "yet-another-react-lightbox": "^3.29.1",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -20,7 +30,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.0.1",
+    "eslint-config-next": "16.0.10",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
