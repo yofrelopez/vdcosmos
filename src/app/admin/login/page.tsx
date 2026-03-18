@@ -1,23 +1,38 @@
 'use client';
 
-import { login } from '@/lib/actions/authActions';
-import { useActionState, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { toast } from 'sonner';
-import SubmitButton from '@/components/ui/SubmitButton';
 import { Eye, EyeOff } from 'lucide-react';
+import { authClient } from '@/lib/auth/client';
 
 import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
   const router = useRouter();
-  const [state, action] = useActionState(login, null);
   const [showPassword, setShowPassword] = useState(false);
+  const [isPending, setIsPending] = useState(false);
 
-  useEffect(() => {
-    if (state?.error) {
-      toast.error(state.error);
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsPending(true);
+
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get('email') as string;
+    const password = formData.get('password') as string;
+
+    const { error } = await authClient.signIn.email({
+      email,
+      password,
+    });
+
+    if (error) {
+      toast.error(error.message || 'Error al iniciar sesión');
+      setIsPending(false);
+    } else {
+      toast.success('Sesión iniciada correctamente');
+      window.location.href = '/admin'; // Hard redirect for a clean state
     }
-  }, [state]);
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
@@ -28,7 +43,7 @@ export default function LoginPage() {
         </div>
 
         <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-          <form action={action} className="space-y-6">
+          <form onSubmit={handleLogin} className="space-y-6">
             <div>
               <label 
                 htmlFor="email" 
@@ -77,12 +92,21 @@ export default function LoginPage() {
               </div>
             </div>
 
-            <SubmitButton 
-              className="w-full bg-cosmos-blue text-white font-bold py-3 rounded-lg hover:bg-cosmos-blue-dark transition-all shadow-lg hover:shadow-cosmos-blue/20"
-              loadingText="Verificando..."
+            <button 
+              type="submit"
+              disabled={isPending}
+              className="w-full flex justify-center items-center bg-cosmos-blue text-white font-bold py-3 rounded-lg hover:bg-cosmos-blue-dark transition-all shadow-lg hover:shadow-cosmos-blue/20 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Entrar al Panel
-            </SubmitButton>
+              {isPending ? (
+                <>
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Verificando...
+                </>
+              ) : 'Entrar al Panel'}
+            </button>
           </form>
 
           <div className="mt-8 pt-6 border-t border-gray-100 text-center">
