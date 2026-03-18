@@ -1,31 +1,28 @@
 'use server';
 
-import { cookies } from 'next/headers';
-import { encrypt } from '@/lib/auth-utils';
+import { auth } from '@/lib/auth/server';
+import { redirect } from 'next/navigation';
 
 export async function login(prevState: any, formData: FormData) {
-  const password = formData.get('password');
-  const adminPassword = process.env.ADMIN_PASSWORD;
+  const email = formData.get('email') as string;
+  const password = formData.get('password') as string;
 
-  if (password === adminPassword) {
-    // Generate signed session
-    const expires = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
-    const session = await encrypt({ id: 'admin', role: 'admin', expires });
+  const { error } = await auth.signIn.email({
+    email,
+    password,
+  });
 
-    (await cookies()).set('admin_session', session, {
-      expires,
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
-      path: '/',
-    });
-
-    return { success: true };
-  } else {
-    return { error: 'Contraseña incorrecta' };
+  if (error) {
+    return { error: error.message || 'Error al iniciar sesión' };
   }
+
+  redirect('/admin');
 }
 
 export async function logout() {
-  (await cookies()).delete('admin_session');
+  const { error } = await auth.signOut();
+  if (!error) {
+    redirect('/admin/login');
+  }
 }
+

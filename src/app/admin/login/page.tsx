@@ -12,30 +12,44 @@ export default function LoginPage() {
   const [state, action] = useActionState(login, null);
 
   useEffect(() => {
-    if (state?.success) {
-      toast.success('Sesión iniciada correctamente');
-      router.push('/admin');
-    } else if (state?.error) {
+    if (state?.error) {
       toast.error(state.error);
     }
-  }, [state, router]);
+  }, [state]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-10">
           <h1 className="text-3xl font-bold text-gray-900 mb-2 font-heading">Panel de Control</h1>
-          <p className="text-gray-600 font-body">Ingresa la contraseña para administrar la web.</p>
+          <p className="text-gray-600 font-body">Inicia sesión con tus credenciales de administrador.</p>
         </div>
 
         <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
           <form action={action} className="space-y-6">
             <div>
               <label 
+                htmlFor="email" 
+                className="block text-sm font-bold text-gray-700 mb-2 font-body"
+              >
+                Correo Electrónico
+              </label>
+              <input 
+                id="email"
+                name="email" 
+                type="email" 
+                required 
+                placeholder="admin@cosmos.com"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-cosmos-blue/50 transition-all font-body"
+              />
+            </div>
+
+            <div>
+              <label 
                 htmlFor="password" 
                 className="block text-sm font-bold text-gray-700 mb-2 font-body"
               >
-                Contraseña de Administrador
+                Contraseña
               </label>
               <input 
                 id="password"
