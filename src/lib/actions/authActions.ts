@@ -3,6 +3,8 @@
 import { auth } from '@/lib/auth/server';
 import { redirect } from 'next/navigation';
 
+import { revalidatePath } from 'next/cache';
+
 export async function login(prevState: any, formData: FormData) {
   const email = formData.get('email') as string;
   const password = formData.get('password') as string;
@@ -20,9 +22,9 @@ export async function login(prevState: any, formData: FormData) {
 }
 
 export async function logout() {
-  const { error } = await auth.signOut();
-  if (!error) {
-    redirect('/admin/login');
-  }
+  await auth.signOut();
+  revalidatePath('/admin');
+  redirect('/admin/login');
 }
+
 

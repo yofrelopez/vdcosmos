@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { logout } from '@/lib/actions/authActions';
+import { authClient } from '@/lib/auth/client';
 import { LayoutDashboard, LogOut, Package, ExternalLink, Settings, ShieldCheck } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -22,8 +22,13 @@ const services = [
 
 export default function AdminDashboard() {
   const handleLogout = async () => {
-    await logout();
-    toast.success('Sesión cerrada correctamente');
+    try {
+      await authClient.signOut();
+      window.location.href = '/admin/login';
+    } catch (error) {
+      console.error('Error al cerrar sesión:', error);
+      toast.error('Error al cerrar sesión');
+    }
   };
 
   return (

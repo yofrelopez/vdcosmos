@@ -1,15 +1,17 @@
 'use client';
 
 import { login } from '@/lib/actions/authActions';
-import { useActionState, useEffect } from 'react';
+import { useActionState, useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import SubmitButton from '@/components/ui/SubmitButton';
+import { Eye, EyeOff } from 'lucide-react';
 
 import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
   const router = useRouter();
   const [state, action] = useActionState(login, null);
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     if (state?.error) {
@@ -51,14 +53,28 @@ export default function LoginPage() {
               >
                 Contraseña
               </label>
-              <input 
-                id="password"
-                name="password" 
-                type="password" 
-                required 
-                placeholder="••••••••"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-cosmos-blue/50 transition-all font-body"
-              />
+              <div className="relative">
+                <input 
+                  id="password"
+                  name="password" 
+                  type={showPassword ? "text" : "password"} 
+                  required 
+                  placeholder="••••••••"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-cosmos-blue/50 transition-all font-body pr-12"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-cosmos-blue transition-colors focus:outline-none p-1"
+                  aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+                >
+                  {showPassword ? (
+                    <EyeOff className="w-5 h-5" />
+                  ) : (
+                    <Eye className="w-5 h-5" />
+                  )}
+                </button>
+              </div>
             </div>
 
             <SubmitButton 
