@@ -1,13 +1,19 @@
 import { sql } from '@/lib/db';
 import { CatalogItem } from '@/lib/actions/catalogActions';
 import CatalogListClient from '@/components/admin/CatalogListClient';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
+import { auth } from '@/lib/auth/server';
 
 interface Props {
   params: Promise<{ id: string }>;
 }
 
 export default async function ServiceAdminPage({ params }: Props) {
+  const session = await auth.getSession();
+  if (!session) {
+    redirect('/admin/login');
+  }
+
   const { id } = await params;
   
   // Verify service exists

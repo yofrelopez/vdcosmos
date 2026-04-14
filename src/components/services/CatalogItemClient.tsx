@@ -28,15 +28,23 @@ export default function CatalogItemClient({ item }: { item: CatalogItem }) {
           className="relative w-full md:w-2/5 h-64 md:h-auto overflow-hidden bg-gray-200 cursor-zoom-in"
           onClick={() => setIsOpen(true)}
         >
-          <CldImage
-            src={item.image_url || '/images/placeholder-service.svg'}
-            alt={item.model_name}
-            fill
-            crop="fill"
-            gravity="auto"
-            sizes="(max-width: 768px) 100vw, 40vw"
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-          />
+          {item.image_url ? (
+            <CldImage
+              src={item.image_url}
+              alt={item.model_name}
+              fill
+              crop="fill"
+              gravity="auto"
+              sizes="(max-width: 768px) 100vw, 40vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          ) : (
+            <img
+              src="/images/placeholder-service.svg"
+              alt={item.model_name}
+              className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-500"
+            />
+          )}
           {/* Overlay Hint */}
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
             <div className="bg-white/90 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">

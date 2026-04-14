@@ -67,13 +67,21 @@ export default function CatalogListClient({ items, serviceId }: { items: Catalog
           {items.map((item) => (
             <div key={item.id} className="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex gap-6 items-center hover:border-gray-300 transition-colors">
               <div className="w-24 h-24 relative bg-gray-50 rounded-lg overflow-hidden flex-shrink-0 border border-gray-100">
-                <CldImage
-                  src={item.image_url || '/images/placeholder-service.svg'}
-                  alt={item.model_name}
-                  fill
-                  crop="thumb"
-                  className="object-cover"
-                />
+                {item.image_url ? (
+                  <CldImage
+                    src={item.image_url}
+                    alt={item.model_name}
+                    fill
+                    crop="thumb"
+                    className="object-cover"
+                  />
+                ) : (
+                  <img
+                    src="/images/placeholder-service.svg"
+                    alt={item.model_name}
+                    className="w-full h-full object-cover absolute inset-0"
+                  />
+                )}
               </div>
 
               <div className="flex-1 min-w-0">

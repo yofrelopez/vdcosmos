@@ -3,6 +3,7 @@
 import { sql } from '@/lib/db';
 import { revalidatePath } from 'next/cache';
 import { catalogItemSchema } from '../schemas/catalogSchema';
+import { auth } from '@/lib/auth/server';
 
 export interface CatalogItem {
   id: string;
@@ -22,6 +23,11 @@ export async function getCatalogItems(serviceId: string) {
 }
 
 export async function addCatalogItem(prevState: any, formData: FormData) {
+  const session = await auth.getSession();
+  if (!session) {
+    return { success: false, error: 'No autorizado: Debes iniciar sesión' };
+  }
+
   try {
     const rawData = {
       service_id: formData.get('service_id'),
@@ -58,6 +64,11 @@ export async function addCatalogItem(prevState: any, formData: FormData) {
 }
 
 export async function updateCatalogItem(id: string, prevState: any, formData: FormData) {
+  const session = await auth.getSession();
+  if (!session) {
+    return { success: false, error: 'No autorizado: Debes iniciar sesión' };
+  }
+
   try {
     const rawData = {
       service_id: formData.get('service_id'),
@@ -98,6 +109,11 @@ export async function updateCatalogItem(id: string, prevState: any, formData: Fo
 }
 
 export async function deleteCatalogItem(id: string, service_id: string) {
+  const session = await auth.getSession();
+  if (!session) {
+    return { success: false, error: 'No autorizado: Debes iniciar sesión' };
+  }
+
   try {
     await (sql as any)`DELETE FROM catalog_items WHERE id = ${id}`;
     

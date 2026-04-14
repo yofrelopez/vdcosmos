@@ -20,17 +20,24 @@ export default function LoginPage() {
     const email = formData.get('email') as string;
     const password = formData.get('password') as string;
 
-    const { error } = await authClient.signIn.email({
-      email,
-      password,
-    });
+    try {
+      const { error } = await authClient.signIn.email({
+        email,
+        password,
+      });
 
-    if (error) {
-      toast.error(error.message || 'Error al iniciar sesión');
+      if (error) {
+        toast.error(error.message || 'Error al iniciar sesión');
+        setIsPending(false);
+      } else {
+        toast.success('Sesión iniciada correctamente');
+        window.location.href = '/admin'; // Hard redirect for a clean state
+      }
+    } catch (err: any) {
+      // Evitar enviar el objeto de error completo a console.error para que Next.js no muestre el overlay rojo.
+      const errorMessage = err?.message || 'Credenciales incorrectas o error de conexión.';
+      toast.error(errorMessage);
       setIsPending(false);
-    } else {
-      toast.success('Sesión iniciada correctamente');
-      window.location.href = '/admin'; // Hard redirect for a clean state
     }
   };
 
