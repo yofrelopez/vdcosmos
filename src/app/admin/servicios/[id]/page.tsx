@@ -15,23 +15,24 @@ export default async function ServiceAdminPage({ params }: Props) {
   }
 
   const { id } = await params;
+  const decodedId = decodeURIComponent(id);
   
   // Verify service exists
-  const [service] = await sql<any[]>`SELECT * FROM services WHERE id = ${id}`;
+  const [service] = await sql<any[]>`SELECT * FROM services WHERE id = ${decodedId}`;
   if (!service) {
     notFound();
   }
 
   const items = await sql<CatalogItem[]>`
     SELECT * FROM catalog_items 
-    WHERE service_id = ${id}
+    WHERE service_id = ${decodedId}
     ORDER BY model_name ASC
   `;
 
   return (
     <div className="min-h-screen bg-gray-50 p-8 pt-24 lg:pt-28">
       <div className="max-w-6xl mx-auto">
-        <CatalogListClient items={items} serviceId={id} />
+        <CatalogListClient items={items} serviceId={decodedId} />
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import { toast } from 'sonner';
 
 const services = [
   { id: 'ventanas', name: 'Ventanas de Aluminio', icon: '🪟' },
-  { id: 'mamparas_baño', name: 'Mamparas de Baño', icon: '🚿' },
+  { id: 'mamparas_bano', name: 'Mamparas de Baño', icon: '🚿' },
   { id: 'puertas', name: 'Puertas', icon: '🚪' },
   { id: 'vitrinas', name: 'Vitrinas', icon: '💎' },
   { id: 'espejos', name: 'Espejos', icon: '🪞' },
