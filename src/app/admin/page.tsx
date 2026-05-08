@@ -7,8 +7,9 @@ import { toast } from 'sonner';
 
 const services = [
   { id: 'ventanas', name: 'Ventanas de Aluminio', icon: '🪟' },
-  { id: 'mamparas_bano', name: 'Mamparas de Baño', icon: '🚿' },
+  { id: 'mamparas', name: 'Mamparas', icon: '🚿' },
   { id: 'puertas', name: 'Puertas', icon: '🚪' },
+  { id: 'puertas_templado', name: 'Puertas Templado', icon: '🚪' },
   { id: 'vitrinas', name: 'Vitrinas', icon: '💎' },
   { id: 'espejos', name: 'Espejos', icon: '🪞' },
   { id: 'barandas', name: 'Barandas', icon: '🪜' },
@@ -16,6 +17,9 @@ const services = [
   { id: 'techos', name: 'Techos', icon: '🏠' },
   { id: 'muebles_aluminio', name: 'Muebles de Aluminio', icon: '🗄️' },
   { id: 'melamina', name: 'Melamina', icon: '🪵' },
+  { id: 'rejas_aluminio', name: 'Rejas de Aluminio', icon: '🛡️' },
+  { id: 'balcones', name: 'Balcones', icon: '🌅' },
+  { id: 'pergolas', name: 'Pérgolas', icon: '🌿' },
   { id: 'accesorios', name: 'Accesorios', icon: '🛠️' },
   { id: 'servicios_tecnicos', name: 'Servicio Técnico', icon: '🔧' },
 ];

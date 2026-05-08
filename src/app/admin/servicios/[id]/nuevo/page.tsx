@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { addCatalogItem } from '@/lib/actions/catalogActions';
 import CloudinaryUpload from '@/components/admin/CloudinaryUpload';
 import SubmitButton from '@/components/ui/SubmitButton';
-import { useActionState, useEffect } from 'react';
+import { useActionState, useEffect, startTransition } from 'react';
 import { toast } from 'sonner';
 import { useRouter, useParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
@@ -47,7 +47,10 @@ export default function NewCatalogItemPage() {
     Object.entries(data).forEach(([key, value]) => {
       formData.append(key, value || '');
     });
-    action(formData);
+    
+    startTransition(() => {
+      action(formData);
+    });
   };
 
   const serviceTitle = id?.charAt(0).toUpperCase() + id?.slice(1).replace('_', ' ');
