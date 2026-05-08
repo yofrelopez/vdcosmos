@@ -20,6 +20,13 @@ const services: ServiceItem[] = [
     category: 'Carpintería'
   },
   {
+    id: 'mamparas_bano',
+    title: 'Mamparas',
+    description: 'Mamparas de vidrio templado y aluminio con diseños modernos.',
+    image: '/images/productos/mamparas/mampara.jpg',
+    category: 'Vidriería'
+  },
+  {
     id: 'puertas',
     title: 'Puertas de Aluminio',
     description: 'Puertas resistentes y elegantes para interiores y exteriores.',
@@ -27,25 +34,11 @@ const services: ServiceItem[] = [
     category: 'Carpintería'
   },
   {
-    id: 'mamparas',
-    title: 'Mamparas de Baño',
-    description: 'Mamparas de vidrio templado para duchas con diseños modernos.',
-    image: '/images/productos/mamparas/mampara.jpg',
+    id: 'puertas_templado',
+    title: 'Puertas Templado',
+    description: 'Puertas de vidrio templado de alta seguridad y elegancia.',
+    image: '/images/placeholder-service.svg',
     category: 'Vidriería'
-  },
-  {
-    id: 'puertas_ducha',
-    title: 'Puertas de Ducha',
-    description: 'Puertas especializadas para duchas con vidrio de seguridad.',
-    image: '/images/productos/puertas_ducha/puertas-de-ducha_5.jpg',
-    category: 'Vidriería'
-  },
-  {
-    id: 'espejos',
-    title: 'Espejos Decorativos',
-    description: 'Espejos con marcos elegantes y diseños personalizados.',
-    image: '/images/productos/espejos/espejo.jpg',
-    category: 'Decoración'
   },
   {
     id: 'vitrinas',
@@ -55,39 +48,39 @@ const services: ServiceItem[] = [
     category: 'Comercial'
   },
   {
-    id: 'balcones',
-    title: 'Barandas de Balcón',
-    description: 'Barandas de aluminio y vidrio para balcones y terrazas.',
-    image: '/images/productos/balcones/barandas-de-acero-para-balcones.jpg',
-    category: 'Estructural'
+    id: 'espejos',
+    title: 'Espejos Decorativos',
+    description: 'Espejos con marcos elegantes y diseños personalizados.',
+    image: '/images/productos/espejos/espejo.jpg',
+    category: 'Decoración'
   },
   {
-    id: 'baranda',
-    title: 'Barandas Escaleras',
-    description: 'Barandas modernas para escaleras interiores y exteriores.',
+    id: 'barandas',
+    title: 'Barandas',
+    description: 'Barandas modernas para escaleras y balcones.',
     image: '/images/productos/baranda/baranda-escalera.jpg',
     category: 'Estructural'
   },
   {
-    id: 'cortinas',
+    id: 'cortinas_cristal',
     title: 'Cortinas de Cristal',
     description: 'Sistemas de cortinas de cristal para terrazas y espacios abiertos.',
     image: '/images/productos/cortinas/cortina.jpg',
     category: 'Cerramiento'
   },
   {
-    id: 'roller',
-    title: 'Persianas Roller',
-    description: 'Persianas enrollables con control manual y motorizado.',
-    image: '/images/productos/roller/roller-duo.jpg',
+    id: 'techos',
+    title: 'Techos',
+    description: 'Techos sol y sombra, fijos y corredizos.',
+    image: '/images/placeholder-service.svg',
     category: 'Cerramiento'
   },
   {
-    id: 'cuadros',
-    title: 'Marcos y Cuadros',
-    description: 'Marcos de aluminio y vidrio para obras de arte y fotografías.',
-    image: '/images/productos/cuadros/cuadros.jpg',
-    category: 'Decoración'
+    id: 'muebles_aluminio',
+    title: 'Muebles de Aluminio',
+    description: 'Muebles duraderos y modernos fabricados en aluminio.',
+    image: '/images/placeholder-service.svg',
+    category: 'Mobiliario'
   },
   {
     id: 'melamina',
@@ -95,6 +88,41 @@ const services: ServiceItem[] = [
     description: 'Muebles funcionales con acabados en melamina de alta calidad.',
     image: '/images/productos/melamina/melamina.jpg',
     category: 'Mobiliario'
+  },
+  {
+    id: 'rejas_aluminio',
+    title: 'Rejas de Aluminio',
+    description: 'Rejas de seguridad con perfiles de aluminio de alta resistencia.',
+    image: '/images/placeholder-service.svg',
+    category: 'Estructural'
+  },
+  {
+    id: 'balcones',
+    title: 'Balcones',
+    description: 'Cerramientos y estructuras para balcones.',
+    image: '/images/productos/balcones/barandas-de-acero-para-balcones.jpg',
+    category: 'Estructural'
+  },
+  {
+    id: 'pergolas',
+    title: 'Pérgolas',
+    description: 'Pérgolas de aluminio para terrazas y jardines.',
+    image: '/images/placeholder-service.svg',
+    category: 'Estructural'
+  },
+  {
+    id: 'accesorios',
+    title: 'Accesorios',
+    description: 'Accesorios y repuestos para todo tipo de sistemas.',
+    image: '/images/placeholder-service.svg',
+    category: 'Accesorios'
+  },
+  {
+    id: 'servicios_tecnicos',
+    title: 'Servicio Técnico',
+    description: 'Mantenimiento y reparación especializada.',
+    image: '/images/placeholder-service.svg',
+    category: 'Servicios'
   }
 ]
 
