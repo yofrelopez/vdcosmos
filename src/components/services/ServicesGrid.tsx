@@ -11,120 +11,15 @@ interface ServiceItem {
   category: string
 }
 
-const services: ServiceItem[] = [
-  {
-    id: 'ventanas',
-    title: 'Ventanas de Aluminio',
-    description: 'Ventanas modernas con excelente aislamiento térmico y acústico.',
-    image: '/images/productos/ventanas/ventana.jpg',
-    category: 'Carpintería'
-  },
-  {
-    id: 'mamparas_bano',
-    title: 'Mamparas',
-    description: 'Mamparas de vidrio templado y aluminio con diseños modernos.',
-    image: '/images/productos/mamparas/mampara.jpg',
-    category: 'Vidriería'
-  },
-  {
-    id: 'puertas',
-    title: 'Puertas de Aluminio',
-    description: 'Puertas resistentes y elegantes para interiores y exteriores.',
-    image: '/images/productos/puertas/puerta_aluminio.png',
-    category: 'Carpintería'
-  },
-  {
-    id: 'puertas_templado',
-    title: 'Puertas Templado',
-    description: 'Puertas de vidrio templado de alta seguridad y elegancia.',
-    image: '/images/placeholder-service.svg',
-    category: 'Vidriería'
-  },
-  {
-    id: 'vitrinas',
-    title: 'Vitrinas Comerciales',
-    description: 'Vitrinas de vidrio para exhibición comercial y decorativa.',
-    image: '/images/productos/vitrinas/vitrina.jpg',
-    category: 'Comercial'
-  },
-  {
-    id: 'espejos',
-    title: 'Espejos Decorativos',
-    description: 'Espejos con marcos elegantes y diseños personalizados.',
-    image: '/images/productos/espejos/espejo.jpg',
-    category: 'Decoración'
-  },
-  {
-    id: 'barandas',
-    title: 'Barandas',
-    description: 'Barandas modernas para escaleras y balcones.',
-    image: '/images/productos/baranda/baranda-escalera.jpg',
-    category: 'Estructural'
-  },
-  {
-    id: 'cortinas_cristal',
-    title: 'Cortinas de Cristal',
-    description: 'Sistemas de cortinas de cristal para terrazas y espacios abiertos.',
-    image: '/images/productos/cortinas/cortina.jpg',
-    category: 'Cerramiento'
-  },
-  {
-    id: 'techos',
-    title: 'Techos',
-    description: 'Techos sol y sombra, fijos y corredizos.',
-    image: '/images/placeholder-service.svg',
-    category: 'Cerramiento'
-  },
-  {
-    id: 'muebles_aluminio',
-    title: 'Muebles de Aluminio',
-    description: 'Muebles duraderos y modernos fabricados en aluminio.',
-    image: '/images/placeholder-service.svg',
-    category: 'Mobiliario'
-  },
-  {
-    id: 'melamina',
-    title: 'Muebles de Melamina',
-    description: 'Muebles funcionales con acabados en melamina de alta calidad.',
-    image: '/images/productos/melamina/melamina.jpg',
-    category: 'Mobiliario'
-  },
-  {
-    id: 'rejas_aluminio',
-    title: 'Rejas de Aluminio',
-    description: 'Rejas de seguridad con perfiles de aluminio de alta resistencia.',
-    image: '/images/placeholder-service.svg',
-    category: 'Estructural'
-  },
-  {
-    id: 'balcones',
-    title: 'Balcones',
-    description: 'Cerramientos y estructuras para balcones.',
-    image: '/images/productos/balcones/barandas-de-acero-para-balcones.jpg',
-    category: 'Estructural'
-  },
-  {
-    id: 'pergolas',
-    title: 'Pérgolas',
-    description: 'Pérgolas de aluminio para terrazas y jardines.',
-    image: '/images/placeholder-service.svg',
-    category: 'Estructural'
-  },
-  {
-    id: 'accesorios',
-    title: 'Accesorios',
-    description: 'Accesorios y repuestos para todo tipo de sistemas.',
-    image: '/images/placeholder-service.svg',
-    category: 'Accesorios'
-  },
-  {
-    id: 'servicios_tecnicos',
-    title: 'Servicio Técnico',
-    description: 'Mantenimiento y reparación especializada.',
-    image: '/images/placeholder-service.svg',
-    category: 'Servicios'
-  }
-]
+import { servicesConfig } from '@/config/services';
+
+const services: ServiceItem[] = servicesConfig.map(s => ({
+  id: s.id,
+  title: s.name,
+  description: s.description,
+  image: s.image,
+  category: s.category
+}));
 
 const categories = [
   'Todas',

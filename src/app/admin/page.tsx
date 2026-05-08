@@ -4,25 +4,41 @@ import Link from 'next/link';
 import { authClient } from '@/lib/auth/client';
 import { LayoutDashboard, LogOut, Package, ExternalLink, Settings, ShieldCheck } from 'lucide-react';
 import { toast } from 'sonner';
+import { servicesConfig as services } from '@/config/services';
+import { 
+  Grid, 
+  ShowerHead, 
+  DoorClosed, 
+  Gem, 
+  Sparkles, 
+  GripHorizontal, 
+  Layers, 
+  Home, 
+  Archive, 
+  Table, 
+  Shield, 
+  Sunrise, 
+  Leaf, 
+  Wrench 
+} from 'lucide-react';
 
-const services = [
-  { id: 'ventanas', name: 'Ventanas de Aluminio', icon: '🪟' },
-  { id: 'mamparas_bano', name: 'Mamparas', icon: '🚿' },
-  { id: 'puertas', name: 'Puertas', icon: '🚪' },
-  { id: 'puertas_templado', name: 'Puertas Templado', icon: '🚪' },
-  { id: 'vitrinas', name: 'Vitrinas', icon: '💎' },
-  { id: 'espejos', name: 'Espejos', icon: '🪞' },
-  { id: 'barandas', name: 'Barandas', icon: '🪜' },
-  { id: 'cortinas_cristal', name: 'Cortinas de Cristal', icon: '🏙️' },
-  { id: 'techos', name: 'Techos', icon: '🏠' },
-  { id: 'muebles_aluminio', name: 'Muebles de Aluminio', icon: '🗄️' },
-  { id: 'melamina', name: 'Melamina', icon: '🪵' },
-  { id: 'rejas_aluminio', name: 'Rejas de Aluminio', icon: '🛡️' },
-  { id: 'balcones', name: 'Balcones', icon: '🌅' },
-  { id: 'pergolas', name: 'Pérgolas', icon: '🌿' },
-  { id: 'accesorios', name: 'Accesorios', icon: '🛠️' },
-  { id: 'servicios_tecnicos', name: 'Servicio Técnico', icon: '🔧' },
-];
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Grid,
+  ShowerHead,
+  DoorClosed,
+  Gem,
+  Sparkles,
+  GripHorizontal,
+  Layers,
+  Home,
+  Archive,
+  Table,
+  Shield,
+  Sunrise,
+  Leaf,
+  Wrench,
+  Settings
+};
 
 export default function AdminDashboard() {
   const handleLogout = async () => {
@@ -105,8 +121,11 @@ export default function AdminDashboard() {
               href={`/admin/servicios/${service.id}`}
               className="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-cosmos-blue transition-all duration-300 flex flex-col items-center text-center"
             >
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
-                {service.icon}
+              <div className="mb-4 group-hover:scale-110 transition-transform text-cosmos-blue">
+                {(() => {
+                  const Icon = iconMap[service.icon];
+                  return Icon ? <Icon className="w-8 h-8" /> : <Package className="w-8 h-8" />;
+                })()}
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-1">{service.name}</h3>
               <p className="text-xs text-gray-500 mb-4 uppercase tracking-widest">{service.id.replace('_', ' ')}</p>
