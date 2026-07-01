@@ -1,0 +1,25 @@
+codigo,nombre,precio,unidad,categoria,espesor_pulgadas
+MOL-050-ECO,Moldura 1/2" Económica,10.00,metro,Molduras,0.5
+MOL-050-STD,Moldura 1/2" Standard,12.00,metro,Molduras,0.5
+MOL-050-FINO,Moldura 1/2" Fina,15.00,metro,Molduras,0.5
+MOL-075-ECO,Moldura 3/4" Económica,13.00,metro,Molduras,0.75
+MOL-075-STD,Moldura 3/4" Standard,17.00,metro,Molduras,0.75
+MOL-075-FINO,Moldura 3/4" Fina,20.00,metro,Molduras,0.75
+MOL-100-ECO,Moldura 1" Económica,16.00,metro,Molduras,1.0
+MOL-100-STD,Moldura 1" Standard,22.00,metro,Molduras,1.0
+MOL-100-FINO,Moldura 1" Fina,28.00,metro,Molduras,1.0
+MOL-150-ECO,Moldura 1 1/2" Económica,20.00,metro,Molduras,1.5
+MOL-150-STD,Moldura 1 1/2" Standard,30.00,metro,Molduras,1.5
+MOL-150-FINO,Moldura 1 1/2" Fina,45.00,metro,Molduras,1.5
+MOL-200-ECO,Moldura 2" Económica,30.00,metro,Molduras,2.0
+MOL-200-STD,Moldura 2" Standard,47.00,metro,Molduras,2.0
+MOL-200-FINO,Moldura 2" Fina,55.00,metro,Molduras,2.0
+MOL-250-ECO,Moldura 2 1/2" Económica,40.00,metro,Molduras,2.5
+MOL-250-STD,Moldura 2 1/2" Standard,50.00,metro,Molduras,2.5
+MOL-250-FINO,Moldura 2 1/2" Fina,70.00,metro,Molduras,2.5
+VID-SIMP,Vidrio Simple,5.00,pie2,Vidrios,0
+VID-MATE,Vidrio Mate,10.00,pie2,Vidrios,0
+CAR-FONDO,Cartulina de Fondo,2.00,pie2,Fondo,0
+ESP-2CH,Espejo 2mm Chino,5.50,pie2,Espejos,0
+ESP-3CH,Espejo 3mm Chino,7.00,pie2,Espejos,0
+ESP-3AM,Espejo 3mm Americano,9.50,pie2,Espejos,0

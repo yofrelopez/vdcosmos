@@ -19,42 +19,42 @@ const ServicesSection = () => {
       title: 'Vidrio Templado & Mamparas',
       description: 'Mamparas de baño, divisiones y paneles de vidrio templado con la máxima seguridad y elegancia para tu hogar.',
       image: '/images/productos/mamparas/mampara.jpg',
-      href: '/servicios/vidrio-templado'
+      href: '/servicios/mamparas'
     },
     {
       id: 'ventanas-aluminio',
       title: 'Ventanas de Aluminio',
       description: 'Ventanas y sistemas de apertura en aluminio de alta calidad, diseñadas para eficiencia térmica y durabilidad.',
       image: '/images/productos/ventanas/ventana.jpg',
-      href: '/servicios/ventanas-aluminio'
+      href: '/servicios/ventanas'
     },
     {
       id: 'muebles-melamina',
       title: 'Muebles de Melamina',
       description: 'Muebles modulares y personalizados en melamina. Cocinas, closets y soluciones de almacenamiento a medida.',
       image: '/images/productos/melamina/melamina.jpg',
-      href: '/servicios/muebles-melamina'
+      href: '/servicios/melamina'
     },
     {
       id: 'barandas-escaleras',
       title: 'Barandas & Escaleras',
       description: 'Barandas de acero, vidrio y mixtas para escaleras y balcones. Diseños modernos con máxima seguridad.',
       image: '/images/productos/baranda/baranda-escalera.jpg',
-      href: '/servicios/barandas-escaleras'
+      href: '/servicios/barandas'
     },
     {
       id: 'espejos-decoraciones',
       title: 'Espejos & Decoraciones',
       description: 'Espejos decorativos, cuadros y elementos de diseño que transforman y amplían tus espacios.',
       image: '/images/productos/espejos/espejo.jpg',
-      href: '/servicios/espejos-decoraciones'
+      href: '/servicios/espejos'
     },
     {
       id: 'cortinas-persianas',
       title: 'Cortinas & Persianas',
       description: 'Cortinas roller, persianas y sistemas de control solar para privacidad y confort en tu hogar u oficina.',
       image: '/images/productos/cortinas/cortina.jpg',
-      href: '/servicios/cortinas-persianas'
+      href: '/servicios/cortinas_cristal'
     }
   ]
 

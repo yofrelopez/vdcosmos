@@ -22,11 +22,39 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const [service] = await sql<Service[]>`SELECT * FROM services WHERE id = ${id}`;
   
-  if (!service) return { title: 'Servicio no encontrado' };
+  if (!service) return { title: 'Servicio no encontrado | Vidriería Cosmos' };
+
+  const title = `${service.name} - Catálogo Especializado | Vidriería Cosmos`;
+  const description = service.description || '';
+  const url = `https://vdcosmos.vercel.app/servicios/${id}`;
+  const imageUrl = service.image_url || 'https://vdcosmos.vercel.app/images/servicios_hero.png';
 
   return {
-    title: `${service.name} - Catálogo Especializado | VD COSMOS`,
-    description: service.description,
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      type: 'website',
+      locale: 'es_PE',
+      url,
+      title,
+      description,
+      siteName: 'Vidriería Cosmos',
+      images: [
+        {
+          url: imageUrl,
+          alt: `Servicio de ${service.name} en Vidriería Cosmos`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [imageUrl],
+    },
   };
 }
 

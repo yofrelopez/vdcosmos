@@ -20,12 +20,15 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "VD COSMOS - Vidriería & Decoraciones | 50 Años de Experiencia",
-  description: "50 años creando espacios únicos. Especialistas en vidrio templado, aluminio, melamina y decoraciones. Servicios profesionales con garantía total.",
-  keywords: ["vidriería", "aluminio", "mamparas", "ventanas", "puertas", "decoraciones", "melamina", "vitrinas", "espejos", "COSMOS"],
-  authors: [{ name: "VD COSMOS" }],
-  creator: "VD COSMOS",
-  publisher: "VD COSMOS",
+  title: "Vidriería Cosmos | Ventanas, Mamparas y Aluminio",
+  description: "Vidriería Cosmos en Barranca. 50 años de experiencia en instalación de mamparas de baño, ventanas de aluminio, vidrio templado, melamina y cuadros a medida.",
+  keywords: ["vidriería cosmos", "mamparas barranca", "ventanas de aluminio", "vidrio templado", "cuadros a medida", "puertas de aluminio", "vidrieria barranca"],
+  authors: [{ name: "Vidriería Cosmos" }],
+  creator: "Vidriería Cosmos",
+  publisher: "Vidriería Cosmos",
+  alternates: {
+    canonical: "https://vdcosmos.vercel.app",
+  },
   
   // Favicon
   icons: {
@@ -41,17 +44,17 @@ export const metadata: Metadata = {
   // Open Graph para redes sociales
   openGraph: {
     type: "website",
-    locale: "es_ES",
+    locale: "es_PE",
     url: "https://vdcosmos.vercel.app",
-    siteName: "VD COSMOS",
-    title: "VD COSMOS - Vidriería & Decoraciones | 50 Años de Experiencia",
-    description: "50 años creando espacios únicos. Especialistas en vidrio templado, aluminio, melamina y decoraciones. Servicios profesionales con garantía total.",
+    siteName: "Vidriería Cosmos",
+    title: "Vidriería Cosmos | Ventanas, Mamparas y Aluminio",
+    description: "Vidriería Cosmos en Barranca. 50 años de experiencia en instalación de mamparas de baño, ventanas de aluminio, vidrio templado, melamina y cuadros a medida.",
     images: [
       {
         url: "https://vdcosmos.vercel.app/images/servicios_hero.png",
         width: 1200,
         height: 630,
-        alt: "VD COSMOS - Técnico especialista instalando ventanas de aluminio",
+        alt: "Vidriería Cosmos - Técnico especialista instalando ventanas de aluminio",
         type: "image/png",
       },
     ],
@@ -60,10 +63,10 @@ export const metadata: Metadata = {
   // Twitter Card
   twitter: {
     card: "summary_large_image",
-    site: "@vdcosmos",
-    creator: "@vdcosmos", 
-    title: "VD COSMOS - Vidriería & Decoraciones",
-    description: "50 años creando espacios únicos. Especialistas en vidrio templado, aluminio y decoraciones.",
+    site: "@vidrieriacosmos",
+    creator: "@vidrieriacosmos", 
+    title: "Vidriería Cosmos | Ventanas, Mamparas y Aluminio",
+    description: "Vidriería Cosmos en Barranca. 50 años de experiencia en instalación de mamparas de baño, ventanas de aluminio, vidrio templado, melamina y cuadros a medida.",
     images: ["https://vdcosmos.vercel.app/images/servicios_hero.png"],
   },
 
@@ -110,14 +113,16 @@ export default function RootLayout({
     name: 'VD COSMOS S.R.L.',
     description: '50 años creando espacios únicos. Especialistas en vidrio templado, aluminio, melamina y decoraciones.',
     url: baseUrl,
-    telephone: '+598-XXXXXXXX',
+    telephone: '+51 994 260 216',
+    email: 'vidrieriacosmos@gmail.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Dirección de VD COSMOS',
-      addressLocality: 'Montevideo',
-      addressCountry: 'Uruguay'
+      streetAddress: 'Jirón Arequipa 230',
+      addressLocality: 'Barranca',
+      addressRegion: 'Lima',
+      addressCountry: 'PE'
     },
-    openingHours: 'Mo-Fr 08:00-18:00, Sa 09:00-13:00',
+    openingHours: 'Mo-Sa 09:00-14:00, Mo-Sa 16:00-20:00',
     image: `${baseUrl}/images/servicios_hero.png`,
     logo: `${baseUrl}/images/logos/logo_icon.png`,
     sameAs: [
@@ -125,7 +130,7 @@ export default function RootLayout({
       'https://instagram.com/vdcosmos'
     ],
     serviceType: ['Vidriería', 'Aluminio', 'Decoraciones', 'Mamparas', 'Ventanas', 'Puertas'],
-    areaServed: 'Uruguay'
+    areaServed: 'Perú'
   };
 
   return (

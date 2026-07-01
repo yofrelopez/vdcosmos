@@ -1,0 +1,8 @@
+codigo,nombre,precio,unidad,categoria
+VID-001,Vidrio Incoloro 4mm,6.00,pie2,Vidrios
+VID-002,Vidrio Incoloro 6mm,7.00,pie2,Vidrios
+VID-003,Vidrio Incoloro 8mm,8.50,pie2,Vidrios
+VID-004,Vidrio Gris 6mm,8.50,pie2,Vidrios
+VID-005,Vidrio Bronce 6mm,8.50,pie2,Vidrios
+ALU-001,Ángulo de Aluminio 1/2",4.00,metro,Aluminios
+ALU-002,Ángulo de Aluminio 3/4",6.00,metro,Aluminios

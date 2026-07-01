@@ -1,0 +1,21 @@
+codigo,nombre,precio,unidad,categoria
+VIT-ALU-001,Tubo Cuadrado 1.5" x 1.5",14.00,metro,Aluminio Estructural
+VIT-ALU-002,Tubo 1.5" Ovalado,12.00,metro,Aluminio Estructural
+VIT-ALU-003,Ángulo de 3/4",5.50,metro,Perfiles de Sujeción
+VIT-ALU-004,Canal U de Aluminio,7.50,metro,Perfiles de Sujeción
+VIT-ALU-005,Perfil H (Hojas Corredizas),9.00,metro,Sistema Corredizo
+VIT-ALU-006,Portafelpa,2.00,metro,Sistema Corredizo
+VIT-ALU-007,Felpa para Portafelpa,1.00,metro,Sistema Corredizo
+VIT-ALU-008,Riel Doble Alto,10.00,metro,Sistema Corredizo
+VIT-ALU-009,Riel Doble Bajo,8.00,metro,Sistema Corredizo
+VIT-ALU-010,Ángulo de 1/2" (Repisas),3.00,metro,Soportes
+VIT-ALU-011,Paflón (Base Rectangular),20.00,metro,Base
+VIT-MAT-001,Nordex 3mm,3.50,pie2,Tableros
+VIT-MAT-002,Espejo 3mm,9.00,pie2,Vidrios
+VIT-VID-004,Vidrio Incoloro 4mm,6.00,pie2,Vidrios
+VIT-VID-006,Vidrio Incoloro 6mm,7.00,pie2,Vidrios
+VIT-VID-008,Vidrio Incoloro 8mm,9.00,pie2,Vidrios
+VIT-ACC-001,Garrucha Pequeña,7.00,unidad,Accesorios
+VIT-ACC-002,Garrucha Mediana,10.00,unidad,Accesorios
+VIT-ACC-003,Garrucha Grande,12.00,unidad,Accesorios
+VIT-ACC-004,Cerradura para Vitrina Corrediza,15.00,unidad,Accesorios
